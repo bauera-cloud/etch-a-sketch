@@ -27,16 +27,16 @@ function gridLayout() {
 
 function getAndLimitRows() {
     let numOfRows = prompt("Rows");
-    while (numOfRows > 100) {
-        numOfRows = prompt("Rows should be up to 100");
+    while (numOfRows > 64) {
+        numOfRows = prompt("Rows should be up to 64");
     }
     return numOfRows
 }
 
 function getAndLimitColumns() {
     let numOfColumns = prompt("Columns");
-    while (numOfColumns > 100) {
-        numOfColumns = prompt("Columns should be up to 100")
+    while (numOfColumns > 64) {
+        numOfColumns = prompt("Columns should be up to 64")
     }
     return numOfColumns
 }
