@@ -3,9 +3,17 @@ let gridLayoutBtn = document.querySelector("#gridLayoutBtn");
 
 gridLayoutBtn.addEventListener("click", gridLayout);
 
+
+
 function gridLayout() {
     let numOfRows = prompt("Rows");
+    while (numOfRows > 100) {
+        numOfRows = prompt("Rows should be up to 100");
+    }
     let numOfColumns = prompt("Columns");
+    while (numOfColumns > 100) {
+        numOfColumns = prompt("Columns should be up to 100")
+    }
     //Grid
     //# of rows
     for (let i = 0; i < numOfRows; i++) {
