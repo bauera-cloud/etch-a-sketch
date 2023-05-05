@@ -27,12 +27,21 @@ function gridLayout() {
             row.appendChild(square);
             //hover effect
             square.addEventListener('mouseover', (e) => {
-                e.target.style.backgroundColor = "blue";
+                e.target.style.backgroundColor = randomColor();
                 setTimeout(() => {
                     e.target.style.backgroundColor = "";
                 }, 500);
             });
         }
     }
+}
+
+function randomRGBNum() {
+    return Math.floor((Math.random() * 255) + 1)
+}
+
+function randomColor() {
+    let r = randomRGBNum(), g = randomRGBNum(), b = randomRGBNum();
+    return `rgb(${r}, ${g}, ${b}`;
 }
 
