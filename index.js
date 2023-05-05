@@ -6,8 +6,8 @@ gridLayoutBtn.addEventListener("click", gridLayout);
 
 
 function gridLayout() {
-    let numOfRows = getAndLimitRows();
-    let numOfColumns = getAndLimitColumns();
+    let numOfRows = getAndLimitRows() || 16;
+    let numOfColumns = getAndLimitColumns() || 16;
     //Grid
     //# of rows
     for (let i = 0; i < numOfRows; i++) {
@@ -20,12 +20,7 @@ function gridLayout() {
             square.classList.add("square");
             row.appendChild(square);
             //hover effect
-            square.addEventListener('mouseover', (e) => {
-                e.target.style.backgroundColor = randomColor();
-                setTimeout(() => {
-                    e.target.style.backgroundColor = "";
-                }, 500);
-            });
+            square.addEventListener('mouseover', getRandomColor);
         }
     }
 }
@@ -50,8 +45,11 @@ function randomRGBNum() {
     return Math.floor((Math.random() * 255) + 1)
 }
 
-function randomColor() {
+function getRandomColor(e) {
     let r = randomRGBNum(), g = randomRGBNum(), b = randomRGBNum();
-    return `rgb(${r}, ${g}, ${b}`;
+    e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
+    setTimeout(() => {
+        e.target.style.backgroundColor = "";
+    }, 500);
 }
 
