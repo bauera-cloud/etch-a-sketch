@@ -1,9 +1,5 @@
 let container = document.querySelector(".container");
 
-let bigSquare = document.createElement("div");
-bigSquare.classList.add("bigSquare");
-container.appendChild(bigSquare);
-
 //Grid
 //# of rows
 for (let i = 0; i < 16; i++) {
@@ -15,6 +11,7 @@ for (let i = 0; i < 16; i++) {
         let square = document.createElement("div");
         square.classList.add("square");
         row.appendChild(square);
+        //hover effect
         square.addEventListener('mouseover', (e) => {
             e.target.style.backgroundColor = "blue";
             setTimeout(() => {
@@ -23,10 +20,3 @@ for (let i = 0; i < 16; i++) {
         });
     }
 }
-
-bigSquare.addEventListener('mouseover', (e) => {
-    e.target.style.backgroundColor = "blue";
-    setTimeout(() => {
-        e.target.style.backgroundColor = "";
-    }, 100);
-});
