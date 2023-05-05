@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+html {
+    background-color: #ededed;
+}
+
 html,
 button {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    color: rgb(48, 48, 48);
 }
 
 body {
@@ -15,21 +20,34 @@ body {
 }
 
 h1 {
+    height: 100px;
     text-align: center;
     font-weight: 700;
+    margin-bottom: 0px;
 }
 
 button {
+    background-color: white;
     padding: 8px 20px;
-    align-self: flex-start;
+    align-self: center;
     margin-bottom: 8px;
+    border: 1px solid rgb(212, 212, 212)
 }
 
 .container {
+    display: flex;
+    margin: 0 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 64px
+}
+
+.gridContainer {
     width: 400px;
     margin: 20px;
     display: flex;
     flex-direction: column;
+    box-shadow: 2px 2px 5px 5px rgb(199, 199, 199);
 }
 
 .row {
@@ -50,5 +68,5 @@ button {
 
 footer {
     text-align: center;
-    margin-top: auto;
+    padding: 32px;
 }

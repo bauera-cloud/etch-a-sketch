@@ -1,4 +1,4 @@
-let container = document.querySelector(".container");
+let container = document.querySelector(".gridContainer");
 let gridLayoutBtn = document.querySelector("#gridLayoutBtn");
 
 gridLayoutBtn.addEventListener("click", gridLayout);
