@@ -6,14 +6,8 @@ gridLayoutBtn.addEventListener("click", gridLayout);
 
 
 function gridLayout() {
-    let numOfRows = prompt("Rows");
-    while (numOfRows > 100) {
-        numOfRows = prompt("Rows should be up to 100");
-    }
-    let numOfColumns = prompt("Columns");
-    while (numOfColumns > 100) {
-        numOfColumns = prompt("Columns should be up to 100")
-    }
+    let numOfRows = getAndLimitRows();
+    let numOfColumns = getAndLimitColumns();
     //Grid
     //# of rows
     for (let i = 0; i < numOfRows; i++) {
@@ -34,6 +28,22 @@ function gridLayout() {
             });
         }
     }
+}
+
+function getAndLimitRows() {
+    let numOfRows = prompt("Rows");
+    while (numOfRows > 100) {
+        numOfRows = prompt("Rows should be up to 100");
+    }
+    return numOfRows
+}
+
+function getAndLimitColumns() {
+    let numOfColumns = prompt("Columns");
+    while (numOfColumns > 100) {
+        numOfColumns = prompt("Columns should be up to 100")
+    }
+    return numOfColumns
 }
 
 function randomRGBNum() {
