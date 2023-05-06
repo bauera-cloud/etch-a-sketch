@@ -67,7 +67,15 @@ button {
 }
 
 footer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
     font-size: 20px;
     text-align: center;
     padding: 32px;
+}
+
+#githubImg {
+    width: 25px;
+    height: auto;
 }

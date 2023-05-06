@@ -33,13 +33,13 @@ function createGridLayout(numOfRows, numOfColumns) {
 gridLayoutBtn.addEventListener("click", newGridLayout);
 
 function newGridLayout() {
-    clearGrid();
+    deleteGrid();
     numOfRows = getAndLimitRows() || 16;
     numOfColumns = getAndLimitColumns() || 16;
     createGridLayout(numOfRows, numOfColumns);
 }
 
-function clearGrid() {
+function deleteGrid() {
     let rows = document.querySelectorAll(".row")
     rows.forEach(row => { row.remove() });
 }
