@@ -61,7 +61,7 @@ function randomRGBNum() {
 function getRandomColor(e) {
     let r = randomRGBNum(), g = randomRGBNum(), b = randomRGBNum();
     e.target.style.backgroundColor = `rgb(${r}, ${g}, ${b}`;
-    setTimeout(() => {
-        e.target.style.backgroundColor = "";
-    }, 500);
+    // setTimeout(() => {
+    //     e.target.style.backgroundColor = "";
+    // }, 500);
 }
