@@ -24,12 +24,6 @@ function createGridLayout(numOfRows, numOfColumns) {
     }
 }
 
-// let gridLayoutOptions = document.querySelectorAll('input[name="gridLayout"');
-// gridLayoutOptions.forEach((option) => {
-//     option.addEventListener('click', gridLayout)
-//     console.log(option)
-// })
-
 gridLayoutBtn.addEventListener("click", newGridLayout);
 
 function newGridLayout() {
@@ -43,7 +37,6 @@ function deleteGrid() {
     let rows = document.querySelectorAll(".row")
     rows.forEach(row => { row.remove() });
 }
-
 
 function getAndLimitRows() {
     let numOfRows = prompt("Rows");
@@ -72,7 +65,3 @@ function getRandomColor(e) {
         e.target.style.backgroundColor = "";
     }, 500);
 }
-
-
-//Replace button with 3 options - radio buttons:
-//16x16, 32, 64
