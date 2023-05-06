@@ -1,35 +1,12 @@
 let container = document.querySelector(".gridContainer");
 let gridLayoutBtn = document.querySelector("#gridLayoutBtn");
 
-// let gridLayoutOptions = document.querySelectorAll('input[name="gridLayout"');
-// gridLayoutOptions.forEach((option) => {
-//     option.addEventListener('click', gridLayout)
-//     console.log(option)
-// })
-
-gridLayoutBtn.addEventListener("click", gridLayout);
-
 let numOfRows = 16;
 let numOfColumns = 16;
 
-for (let i = 0; i < numOfRows; i++) {
-    let row = document.createElement("div");
-    row.classList.add("row");
-    container.appendChild(row);
-    //# of columns
-    for (let j = 0; j < numOfColumns; j++) {
-        let square = document.createElement("div");
-        square.classList.add("square");
-        row.appendChild(square);
-        //hover effect
-        square.addEventListener('mouseover', getRandomColor);
-    }
-}
+createGridLayout(numOfRows, numOfColumns);
 
-function gridLayout() {
-    clearGrid();
-    numOfRows = getAndLimitRows() || 16;
-    numOfColumns = getAndLimitColumns() || 16;
+function createGridLayout(numOfRows, numOfColumns) {
     //Grid
     //# of rows
     for (let i = 0; i < numOfRows; i++) {
@@ -47,10 +24,26 @@ function gridLayout() {
     }
 }
 
+// let gridLayoutOptions = document.querySelectorAll('input[name="gridLayout"');
+// gridLayoutOptions.forEach((option) => {
+//     option.addEventListener('click', gridLayout)
+//     console.log(option)
+// })
+
+gridLayoutBtn.addEventListener("click", newGridLayout);
+
+function newGridLayout() {
+    clearGrid();
+    numOfRows = getAndLimitRows() || 16;
+    numOfColumns = getAndLimitColumns() || 16;
+    createGridLayout(numOfRows, numOfColumns);
+}
+
 function clearGrid() {
     let rows = document.querySelectorAll(".row")
     rows.forEach(row => { row.remove() });
 }
+
 
 function getAndLimitRows() {
     let numOfRows = prompt("Rows");
